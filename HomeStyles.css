@@ -1,0 +1,344 @@
+:root {
+  --bg1: #580f0f;
+  --bg2: #000000;
+  --bg-gradient: linear-gradient(to bottom right, var(--bg1), var(--bg2), var(--bg1));
+  --white: #ffffff;
+  --gray-300: #d1d5db;
+  --btn-gradient: linear-gradient(to right, #3b82f6, #250606);
+  --btn-gradient-hover: linear-gradient(to right, #2563eb, #250606);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: var(--white);
+  background: linear-gradient(-45deg, var(--bg1), var(--bg2), var(--bg1));
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  line-height: 1.5;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 2rem;
+}
+
+.text-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-left: 10px;
+}
+
+.text-section h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.text-section h1::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 4px;
+  background: var(--btn-gradient); 
+  border-radius: 2px;
+  margin-top: 8px;
+  transition: transform 0.25s ease, background 0.3s ease;
+}
+
+.text-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--gray-300);
+}
+
+.btn-primary {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  background: var(--btn-gradient);
+  color: var(--white);
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.3s ease;
+}
+
+.cta-testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; 
+  margin-top: 2rem; 
+}
+
+.cta-testimonials p {
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+
+.btn-primary:hover {
+  background: var(--btn-gradient-hover);
+  transform: scale(1.05);
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 45px;
+}
+
+/* Testimonials */
+.testimonials-section {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  padding: 4rem 1rem;
+  border-radius: 80px 80px 80px 80px;
+  margin-top: -50px;
+}
+
+.avatars {
+  margin-bottom: 2rem;
+}
+
+.avatar-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.avatar-group img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.avatar-group .more {
+  font-weight: 600;
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+/* Prints do WhatsApp */
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+
+/* Cards de Testemunhos com animação */
+.testimonial-card {
+  width: 350px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.testimonial-card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.testimonial-card img {
+  width: 100%;
+  display: block;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+}
+
+.learn-section {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.learn-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.module-card {
+  display: flex;
+  flex-direction: column;
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.module-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.module-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.module-info {
+  max-width: 500px;
+  text-align: left;
+}
+
+.module-number {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #f00;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  color: #f00;
+}
+
+.module-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.module-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.module-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+}
+
+
+
+/* Alterna imagem e texto para esquerda/direita em telas grandes */
+.module-card.reverse {
+  flex-direction: column-reverse;
+}
+
+@media(min-width: 768px) {
+  .module-card {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 2rem;
+  }
+  .module-card.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.cta-testimonials {
+  margin-top: 2rem;
+}
+
+.cta-testimonials p {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #111;
+  color: #fff;
+}
+
+/* Medium and Large Screens */
+@media(min-width: 640px) {
+  .text-section h1 {
+    font-size: 2.75rem;
+  }
+  .text-section h2 {
+    font-size: 1.75rem;
+  }
+  .image-section img {
+    max-width: 450px;
+  }
+}
+
+@media(min-width: 768px) {
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .text-section {
+    text-align: left;
+    max-width: 50%;
+  }
+
+  .text-section h1 {
+    font-size: 3.5rem;
+  }
+
+  .text-section h2 {
+    font-size: 2rem;
+  }
+
+  .image-section {
+    max-width: 50%;
+  }
+}
