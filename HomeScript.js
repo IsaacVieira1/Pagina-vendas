@@ -55,3 +55,29 @@ const observerAvatars = new IntersectionObserver((entries, observer) => {
 if (avatarImgs.length > 0) {
   observerAvatars.observe(avatarImgs[0]);
 }
+
+
+const aboutElements = document.querySelectorAll(
+  '.testimonials-section2 h2, .testimonials-section2 p, .testimonials-section2 .about-image img'
+);
+
+const observerAbout = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const index = Array.from(aboutElements).indexOf(el);
+
+      setTimeout(() => {
+        el.classList.add('show');
+      }, index * 250);
+
+      observer.unobserve(el); // desliga só o que já apareceu
+    }
+  });
+}, { threshold: 0.2 });
+
+if (aboutElements.length > 0) {
+  aboutElements.forEach(el => observerAbout.observe(el));
+}
+
+

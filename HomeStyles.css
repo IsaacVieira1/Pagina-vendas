@@ -8,7 +8,6 @@
   --btn-gradient-hover: linear-gradient(to right, #2563eb, #250606);
 }
 
-/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -109,7 +108,7 @@ header {
   border-radius: 10px;
   margin-right: 45px;
   position: relative;
-  top: 14px; /* abaixa a imagem */
+  top: 14px; 
 }
 
 /* Testimonials Section */
@@ -160,7 +159,7 @@ header {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  align-items: flex-start; /* evita espaços em branco */
+  align-items: flex-start; 
   margin-bottom: 4rem;
   margin-top: 4rem;
 }
@@ -283,16 +282,19 @@ header {
   border-radius: 15px;
 }
 
-/* Alterna imagem e texto para esquerda/direita em telas grandes */
+
 .module-card.reverse {
   flex-direction: column-reverse;
 }
 
+
 .cta-whatsapp {
-  background: #111; /* fundo escuro */
+  background: #0a0a0a;
   padding: 3rem 1rem;
   display: flex;
   justify-content: center;
+
+  margin-top: -40px; /* 🔥 sobe a seção inteira */
 }
 
 .cta-content {
@@ -303,10 +305,21 @@ header {
   width: 100%;
   gap: 2rem;
   padding: 2rem 3rem;
-  border-radius: 80px; /* bordas arredondadas */
+  border-radius: 80px;
   background: #1a1a1a;
   flex-wrap: wrap;
+
+  animation: floatContent 4s ease-in-out infinite;
 }
+
+
+
+@keyframes floatContent {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
 
 .cta-text h2 {
   font-size: 1.75rem;
@@ -339,7 +352,7 @@ header {
 }
 
 .cta-button span {
-  font-size: 1.25rem; /* aumenta o ícone */
+  font-size: 1.25rem; 
   transition: transform 0.3s ease;
 }
 
@@ -365,6 +378,132 @@ header {
   left: 100%;
 }
 
+/* Seção Garantia 7 Dias */
+.garantia-section {
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1.5rem;   
+  margin: 2rem auto;      
+  max-width: 900px;      
+}
+
+.garantia-title {
+  font-size: clamp(2.5rem, 8vw, 8rem);        
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px red;  
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;    
+}
+
+.garantia-subtitle {
+  font-size: 2.0rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;  
+}
+
+.garantia-image {
+  margin: 0 auto 1.5rem; 
+  max-width: 350px;
+}
+
+.garantia-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.garantia-text {
+  font-size: 1rem;
+  color: #ddd;
+  max-width: 700px;      
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Seção Rafa Carmona */
+.testimonials-section2 {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  padding: 4rem 2rem;
+  border-radius: 80px;
+  margin-top: -30px; /* menos "colado" no topo */
+}
+
+.testimonials-section2 .about-text {
+  margin-bottom: 3rem;
+}
+
+.testimonials-section2 h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: #111;
+  text-align: center; /* garante centralização */
+  position: relative;
+}
+
+.testimonials-section2 h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #ff0000, #cc0000);
+  margin: 0.8rem auto 0; /* 🔥 centraliza a linha */
+  border-radius: 2px;
+}
+
+.testimonials-section2 p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  color: #444;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* centraliza texto */
+}
+
+.testimonials-section2 .about-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  display: block;
+  margin: 3rem auto 0; 
+  cursor: pointer;
+}
+
+.testimonials-section2 h2,
+.testimonials-section2 p,
+.testimonials-section2 .about-image img {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.testimonials-section2 h2.show,
+.testimonials-section2 p.show,
+.testimonials-section2 .about-image img.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .about-text {
+    text-align: left;
+  }
+}
 
 
 /* Responsividade */
@@ -397,7 +536,7 @@ header {
   .header-content {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start; /* evita centralizar vertical */
+    align-items: flex-start; 
     gap: 2rem;
   }
 
