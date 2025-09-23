@@ -33,7 +33,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem 1rem;
+  padding: 4rem 1rem;
   position: relative;
 }
 
@@ -116,6 +116,7 @@ header {
   height: auto;
   border-radius: 10px;
   margin-right: 45px;
+   transform: translateY(20px);
 }
 
 /* Testimonials */
@@ -147,6 +148,11 @@ header {
   object-fit: cover;
   border: 2px solid #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+  /* Para animação de entrada */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
 .avatar-group .more {
