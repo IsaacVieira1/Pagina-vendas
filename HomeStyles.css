@@ -8,6 +8,7 @@
   --btn-gradient-hover: linear-gradient(to right, #2563eb, #250606);
 }
 
+/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,10 +30,10 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 4rem 1rem;
   position: relative;
 }
@@ -48,7 +49,6 @@ header {
 
 .text-section {
   text-align: center;
-  margin-bottom: 2rem;
   margin-left: 10px;
 }
 
@@ -78,6 +78,7 @@ header {
   color: var(--gray-300);
 }
 
+/* Botões */
 .btn-primary {
   padding: 0.75rem 2rem;
   font-size: 1rem;
@@ -90,24 +91,15 @@ header {
   transition: transform 0.25s ease, background 0.3s ease;
 }
 
-.cta-testimonials {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem; 
-  margin-top: 2rem; 
-}
-
-.cta-testimonials p {
-  font-weight: 600;
-  color: #333;
-  text-align: center;
-}
-
-
 .btn-primary:hover {
   background: var(--btn-gradient-hover);
   transform: scale(1.05);
+}
+
+/* Imagem do palestrante */
+.image-section {
+  display: flex;
+  justify-content: center;
 }
 
 .image-section img {
@@ -116,16 +108,17 @@ header {
   height: auto;
   border-radius: 10px;
   margin-right: 45px;
-   transform: translateY(20px);
+  position: relative;
+  top: 14px; /* abaixa a imagem */
 }
 
-/* Testimonials */
+/* Testimonials Section */
 .testimonials-section {
   background: #fff;
   color: #000;
   text-align: center;
   padding: 4rem 1rem;
-  border-radius: 80px 80px 80px 80px;
+  border-radius: 80px;
   margin-top: -50px;
 }
 
@@ -149,7 +142,7 @@ header {
   border: 2px solid #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 
-  /* Para animação de entrada */
+  /* Animação */
   opacity: 0;
   transform: translateY(30px);
   transition: transform 0.6s ease, opacity 0.6s ease;
@@ -161,17 +154,17 @@ header {
   font-size: 1rem;
 }
 
-/* Prints do WhatsApp */
+/* Cards de Testemunho */
 .testimonials {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+  align-items: flex-start; /* evita espaços em branco */
   margin-bottom: 4rem;
   margin-top: 4rem;
 }
 
-/* Cards de Testemunhos com animação */
 .testimonial-card {
   width: 350px;
   border-radius: 15px;
@@ -180,22 +173,42 @@ header {
   transition: transform 0.6s ease, opacity 0.6s ease;
   transform: translateY(50px);
   opacity: 0;
-}
 
-.testimonial-card.show {
-  transform: translateY(0);
-  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .testimonial-card img {
   width: 100%;
+  height: auto;
+  max-height: 350px; /* controla altura */
+  object-fit: cover;
   display: block;
+  border-radius: 10px;
 }
 
 .testimonial-card:hover {
   transform: scale(1.05);
 }
 
+/* CTA dentro dos testimonials */
+.cta-testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cta-testimonials p {
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Learn Section */
 .learn-section {
   background: #0a0a0a;
   color: #fff;
@@ -221,9 +234,8 @@ header {
   gap: 2rem;
   padding: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.module-card {
+  /* Animação */
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -233,7 +245,6 @@ header {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 .module-card:hover {
   transform: translateY(-5px);
@@ -272,45 +283,104 @@ header {
   border-radius: 15px;
 }
 
-
-
 /* Alterna imagem e texto para esquerda/direita em telas grandes */
 .module-card.reverse {
   flex-direction: column-reverse;
 }
 
-@media(min-width: 768px) {
-  .module-card {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-    padding: 2rem;
-  }
-  .module-card.reverse {
-    flex-direction: row-reverse;
-  }
+.cta-whatsapp {
+  background: #111; /* fundo escuro */
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
 }
 
-.cta-testimonials {
-  margin-top: 2rem;
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  width: 100%;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  border-radius: 80px; /* bordas arredondadas */
+  background: #1a1a1a;
+  flex-wrap: wrap;
 }
 
-.cta-testimonials p {
-  margin-top: 0.5rem;
-  font-weight: 600;
-  color: #333;
-}
-
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: #111;
+.cta-text h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
   color: #fff;
+  margin-bottom: 0.5rem;
 }
 
-/* Medium and Large Screens */
+.cta-text p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Botão de WhatsApp moderno */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 2.25rem;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button span {
+  font-size: 1.25rem; /* aumenta o ícone */
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+  background: linear-gradient(135deg, #128c7e, #25d366);
+}
+
+.cta-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+}
+
+.cta-button:hover::after {
+  left: 100%;
+}
+
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* Responsividade */
 @media(min-width: 640px) {
   .text-section h1 {
     font-size: 2.75rem;
@@ -327,7 +397,7 @@ footer {
   .header-content {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* evita centralizar vertical */
     gap: 2rem;
   }
 
@@ -347,4 +417,23 @@ footer {
   .image-section {
     max-width: 50%;
   }
+
+  .module-card {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 2rem;
+  }
+
+  .module-card.reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #111;
+  color: #fff;
 }
