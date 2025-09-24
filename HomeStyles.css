@@ -288,13 +288,50 @@ header {
 }
 
 
+/* Seção Bônus */
+.cta-bonus {
+  background: #0a0a0a;
+  padding: 3rem 1rem;
+  text-align: center;
+  margin-top: -80px;
+}
+
+.cta-bonus-content p {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.cta-bonus-content .red-text {
+  color: #e50914; 
+  font-weight: bold;
+}
+
+.btn-bonus {
+  display: inline-block;
+  padding: 1.2rem 2.5rem;
+  background: #e50914;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-bonus:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(229, 9, 20, 0.5);
+}
+
+
 .cta-whatsapp {
   background: #0a0a0a;
   padding: 3rem 1rem;
   display: flex;
   justify-content: center;
-
-  margin-top: -40px; /* 🔥 sobe a seção inteira */
+  margin-top: -40px; 
 }
 
 .cta-content {
