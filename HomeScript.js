@@ -71,7 +71,7 @@ const observerAbout = new IntersectionObserver((entries, observer) => {
         el.classList.add('show');
       }, index * 250);
 
-      observer.unobserve(el); // desliga só o que já apareceu
+      observer.unobserve(el);
     }
   });
 }, { threshold: 0.2 });
@@ -80,4 +80,19 @@ if (aboutElements.length > 0) {
   aboutElements.forEach(el => observerAbout.observe(el));
 }
 
+document.querySelectorAll(".faq-question").forEach(button => {
+  button.addEventListener("click", () => {
+    const faqItem = button.parentElement;
+    const isOpen = faqItem.classList.contains("open");
 
+    document.querySelectorAll(".faq-item").forEach(item => {
+      item.classList.remove("open");
+      item.querySelector(".faq-question").classList.remove("active");
+    });
+
+    if (!isOpen) {
+      faqItem.classList.add("open");
+      button.classList.add("active");
+    }
+  });
+});
