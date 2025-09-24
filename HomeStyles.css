@@ -79,7 +79,7 @@ header {
 
 /* Botões */
 .btn-primary {
-  padding: 0.75rem 2rem;
+  padding: 0.75rem 4rem;
   font-size: 1rem;
   font-weight: 700;
   border: none;
@@ -524,12 +524,17 @@ header {
   text-align: left;
 }
 
+
 .faq-item {
-  border: 1px solid #333;
+  border: 1px solid #ffffff;
   border-radius: 8px;
   margin-bottom: 1rem;
   overflow: hidden;
   background: #111;
+}
+
+.faq-item:hover {
+  background: #531a1a;      
 }
 
 .faq-question {
@@ -574,6 +579,47 @@ header {
 .faq-item.open .faq-answer {
   max-height: 500px; 
   padding: 1rem 1.5rem;
+}
+
+
+.cta-final {
+  text-align: center;
+  margin: 2rem 0; 
+} 
+
+/* Botão WhatsApp flutuante */
+/* Botão WhatsApp flutuante */
+.whatsapp-float {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: floatZap 2s ease-in-out infinite; 
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes floatZap {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
 
 @media (min-width: 768px) {
