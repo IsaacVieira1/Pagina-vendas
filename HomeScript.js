@@ -45,7 +45,7 @@ const observerAvatars = new IntersectionObserver((entries, observer) => {
         setTimeout(() => {
           avatar.style.opacity = '1';
           avatar.style.transform = 'translateY(0)';
-        }, index * 150);
+        }, index * 120);
       });
       observer.unobserve(entry.target);
     }
