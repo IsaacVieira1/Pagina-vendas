@@ -1,10 +1,10 @@
 :root {
-  --red: #E10606;          /* vermelho vibrante */
-  --green: #27AE60;        /* verde WhatsApp */
-  --black: #000000;        /* fundo principal */
-  --white: #FFFFFF;        /* textos sobre fundos escuros */
+  --red: #E10606;          
+  --green: #27AE60;       
+  --black: #000000;       
+  --white: #FFFFFF;        
 
-  --bg1: #701515;
+  --bg1: #8b0c0c;
   --bg2: var(--black);
   --bg-gradient: linear-gradient(to bottom right, var(--bg1), var(--bg2), var(--bg1));
 
@@ -22,9 +22,10 @@ body {
   color: var(--white);
   background: linear-gradient(-45deg, var(--bg1), var(--bg2), var(--bg1));
   background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
+  animation: gradientMove 7s ease infinite; 
   line-height: 1.5;
 }
+
 
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
@@ -38,6 +39,7 @@ header {
   justify-content: center;
   padding: 4rem 1rem;
   position: relative;
+  
 }
 
 .header-content {
@@ -466,8 +468,8 @@ header {
 
 /* Seção Rafa Carmona */
 .testimonials-section2 {
-  background: #0a0a0a;
-  color: #111;
+  background: #0a0a0a;  
+  color: #000;
   text-align: center;
   padding: 4rem 2rem;
   border-radius: 80px;
@@ -628,7 +630,6 @@ header {
 } 
 
 /* Botão WhatsApp flutuante */
-/* Botão WhatsApp flutuante */
 .whatsapp-float {
   position: fixed;
   width: 55px;
@@ -741,7 +742,7 @@ header {
 /* Footer */
 footer {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1.3rem 1rem;
   background: #111;
   color: #fff;
 }
